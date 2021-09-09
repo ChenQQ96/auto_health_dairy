@@ -13,7 +13,7 @@
 a)  Selenium 
 4.	Webdriver:根据浏览器的版本下载
 5.	开发工具
-a)	Selenium-webdriver
+    a)	Selenium-webdriver
 　　b)	Selenium WebDriver（一） - 简书 (jianshu.com)  
 　　如何查看谷歌浏览器版本-百度经验 (baidu.com）  
 　　Python3 split() 方法 | 菜鸟教程 (runoob.com)  
