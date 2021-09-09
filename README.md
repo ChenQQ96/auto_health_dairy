@@ -1,4 +1,7 @@
-﻿# auto_health_dairy
+﻿运行环境：windows
+由于不熟悉centos系统下，无GUI的selenium的用法，本程序主要在windows系统中运行
+后续改进：部署在centos系统中
+# auto_health_dairy
 自动填写健康日报(上海交通大学版)
 
 	1. 健康日报链接：2021年机动学院学生健康日报填报界面 (sjtu.edu.cn)
@@ -20,3 +23,4 @@
 
 运行 start.bat 会每天定时运行运行python文件
 运行 stop.bat 会终止所有python进程
+
