@@ -2,11 +2,12 @@
 #从selenium里面导入webdriver
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+# from selenium.webdriver.support.select import Select
 from PIL import Image,ImageEnhance
 import time
 import pytesseract
 import sys
-
+import os
 #配置logging文件，简化logger = logging.getLogger(__name__)，使用logging.basicConfig定义默认接口，可以直接使用logging对象
 import logging
 logging.basicConfig(

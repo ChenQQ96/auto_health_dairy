@@ -1,5 +1,5 @@
 from base_page import *
-from selenium.webdriver.support.select import Select
+
 def putin_info():
     driver.get('https://ssc.sjtu.edu.cn/f/dae8d35a')
     logging.info('页面加载完成')
@@ -76,20 +76,22 @@ def putin_code():
     user_login.click()
     time.sleep(2)
 
-putin_info()
-putin_code()
-while True:
-    try:
-        user_warn=driver.find_element_by_id('div_warn')
-        print('-----------------------------验证码错误--------------------------------------')
-        logging.info('重新登陆中')
-        print('----------------------------------------------------------------------------')
-        putin_info()
-        putin_code()
-    except:
-        print('-----------------------------验证码正确--------------------------------------')
-        logging.info('正在进入日报填写界面')
-        break
+#完成登录
+def login():
+    putin_info()
+    putin_code()
+    while True:
+        try:
+            user_warn=driver.find_element_by_id('div_warn')
+            print('-----------------------------验证码错误--------------------------------------')
+            logging.info('重新登陆中')
+            print('----------------------------------------------------------------------------')
+            putin_info()
+            putin_code()
+        except:
+            print('-----------------------------验证码正确--------------------------------------')
+            logging.info('正在进入日报填写界面')
+            break
 
 
 def put_teacher():
@@ -151,6 +153,7 @@ def click_submit():
     element1.click()
 
 if __name__=='__main__':
+    login()
     put_teacher()
     put_address()
     click_submit()

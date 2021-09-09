@@ -17,3 +17,6 @@
 		d. python+selenium 定位隐藏元素
 		e. selenium的下拉选择框
 快速定位元素的方式：鼠标悬停在目标元素上，右键—检查
+
+运行 start.bat 会每天定时运行运行python文件
+运行 stop.bat 会终止所有python进程
