@@ -76,6 +76,39 @@ def putin_code():
     user_login.click()
     time.sleep(2)
 
+def send_email():
+    """
+    完成每日健康日报填写后，给自己发送邮件通知
+    param:
+        msg_from   发送方邮箱
+        passwd     发送方密码
+        msg_to     收件方邮箱
+        subject    邮件主题
+        content    邮件内容
+        s          邮件服务器及端口号
+    """
+    msg_from='1141029485@qq.com'
+    passwd='llvovkzqippvhegf'
+    msg_to='1141029485@qq.com'
+    subject='健康日报填写'
+    content='健康日报填写完成'
+
+    msg=MIMEText(content)
+    msg['Subject']=subject
+    msg['From']=msg_from
+    msg['To']=msg_to
+    
+    try:
+        s=smtplib.SMTP_SSL("smtp.qq.com",465)
+        s.login(msg_from, passwd)
+        s.sendmail(msg_from, msg_to, msg.as_string())
+        logging.info('邮件通知，发送成功')
+    except smtplib.SMTPAuthenticationError as e:
+        logging.info('邮件发送失败,未配置邮件客户端')
+        logging.info(e)
+    finally:
+        s.quit()
+
 #完成登录
 def login():
     putin_info()
@@ -151,6 +184,7 @@ def click_submit():
     """
     element1=driver.find_element_by_xpath('/html/body/qf-root/qf-pages/qf-app-item/qf-app-initiate/div/div/qf-initiate-apply/div/div[1]/div[2]/button[2]')
     element1.click()
+    logging.info('日报已提交')
 
 if __name__=='__main__':
     login()
@@ -158,4 +192,4 @@ if __name__=='__main__':
     put_address()
     click_submit()
     driver.quit()
-    print('日报已提交')
+    send_email()
