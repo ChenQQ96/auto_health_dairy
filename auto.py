@@ -188,8 +188,8 @@ def click_submit():
 
 if __name__=='__main__':
     login()
-    put_teacher()
-    put_address()
+    # put_teacher()
+    # put_address()
     click_submit()
     driver.quit()
     send_email()
